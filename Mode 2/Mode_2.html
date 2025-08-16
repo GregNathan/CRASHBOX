@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CrashLab: Mode 2 - Linear Crash</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💥 CrashLab: Mode 2 - Linear Crash</h1>
+
+    <label>Car Mass (kg): <span id="massVal">0</span></label>
+    <input type="range" id="mass" min="100" max="2000" step="50" value="800" oninput="updateCrash()">
+
+    <label>Initial Speed (m/s): <span id="speedVal">0</span></label>
+    <input type="range" id="speed" min="1" max="50" step="1" value="20" oninput="updateCrash()">
+
+    <label>Stopping Distance (m): <span id="stopVal">0</span></label>
+    <input type="range" id="stopping" min="0.1" max="5" step="0.1" value="0.5" oninput="updateCrash()">
+
+    <button id="applyBtn" onclick="updateCrash()">Apply Values</button>
+    <button id="calibrateBtn" onclick="calibrate()">Calibrate</button>
+
+    <div class="graphs-row">
+      <div class="graph-container">
+        <canvas id="speedGraph" width="350" height="250"></canvas>
+      </div>
+      <div class="graph-container">
+        <canvas id="forceGraph" width="350" height="250"></canvas>
+      </div>
+    </div>
+
+    <div id="results"></div>
+
+    <div id="carTrack">
+      <img id="car" src="car (2).png" alt="car">
+    </div>
+  </div>
+
+  <script src="script_2.js"></script>
+</body>
+</html>
